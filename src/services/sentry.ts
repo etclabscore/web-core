@@ -1,9 +1,10 @@
+import { SENTRY_DSN } from '@/config/constants'
 import * as Sentry from '@sentry/react'
 import { Integrations } from '@sentry/tracing'
-import { SENTRY_DSN } from '@/config/constants'
 import packageJson from '../../package.json'
 
 Sentry.init({
+  enabled: false, // disable sentry on ETC
   dsn: SENTRY_DSN,
   release: `web-core@${packageJson.version}`,
   integrations: [new Integrations.BrowserTracing()],
@@ -12,17 +13,19 @@ Sentry.init({
   ignoreErrors: ['Internal JSON-RPC error', 'JsonRpcEngine', 'Non-Error promise rejection captured with keys: code'],
 
   beforeSend: (event) => {
+    return null // disable sentry on ETC
+
     // Remove sensitive URL query params
-    const query = event.request?.query_string
-    if (event.request && query) {
-      const appUrl = typeof query !== 'string' && !Array.isArray(query) ? query.appUrl : ''
-      if (appUrl) {
-        event.request.query_string = { appUrl }
-      } else {
-        delete event.request.query_string
-      }
-    }
-    return event
+    // const query = event.request?.query_string
+    // if (event.request && query) {
+    //   const appUrl = typeof query !== 'string' && !Array.isArray(query) ? query.appUrl : ''
+    //   if (appUrl) {
+    //     event.request.query_string = { appUrl }
+    //   } else {
+    //     delete event.request.query_string
+    //   }
+    // }
+    // return event
   },
 })
 
