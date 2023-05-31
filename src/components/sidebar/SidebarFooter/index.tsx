@@ -7,11 +7,11 @@ import {
   SidebarListItemIcon,
   SidebarListItemText,
 } from '@/components/sidebar/SidebarList'
-import { BEAMER_SELECTOR, loadBeamer } from '@/services/beamer'
+// import { BEAMER_SELECTOR, loadBeamer } from '@/services/beamer'
 import { useAppDispatch, useAppSelector } from '@/store'
-import { selectCookies, CookieType } from '@/store/cookiesSlice'
-import { openCookieBanner } from '@/store/popupSlice'
-import BeamerIcon from '@/public/images/sidebar/whats-new.svg'
+import { selectCookies } from '@/store/cookiesSlice'
+// import { openCookieBanner } from '@/store/popupSlice'
+// import BeamerIcon from '@/public/images/sidebar/whats-new.svg'
 import HelpCenterIcon from '@/public/images/sidebar/help-center.svg'
 import { ListItem } from '@mui/material'
 import DebugToggle from '../DebugToggle'
@@ -27,20 +27,20 @@ const SidebarFooter = (): ReactElement => {
   const cookies = useAppSelector(selectCookies)
   const chain = useCurrentChain()
 
-  const hasBeamerConsent = useCallback(() => cookies[CookieType.UPDATES], [cookies])
+  // const hasBeamerConsent = useCallback(() => cookies[CookieType.UPDATES], [cookies])
 
-  useEffect(() => {
-    // Initialise Beamer when consent was previously given
-    if (hasBeamerConsent() && chain?.shortName) {
-      loadBeamer(chain.shortName)
-    }
-  }, [hasBeamerConsent, chain?.shortName])
+  // useEffect(() => {
+  //   // Initialise Beamer when consent was previously given
+  //   if (hasBeamerConsent() && chain?.shortName) {
+  //     loadBeamer(chain.shortName)
+  //   }
+  // }, [hasBeamerConsent, chain?.shortName])
 
-  const handleBeamer = () => {
-    if (!hasBeamerConsent()) {
-      dispatch(openCookieBanner({ warningKey: CookieType.UPDATES }))
-    }
-  }
+  // const handleBeamer = () => {
+  //   if (!hasBeamerConsent()) {
+  //     dispatch(openCookieBanner({ warningKey: CookieType.UPDATES }))
+  //   }
+  // }
 
   return (
     <SidebarList>
