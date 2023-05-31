@@ -1,10 +1,10 @@
 import { IS_PRODUCTION } from '@/config/constants'
 import { ContentSecurityPolicy, StrictTransportSecurity } from '@/config/securityHeaders'
-import { lightPalette, darkPalette } from '@safe-global/safe-react-components'
+import { darkPalette, lightPalette } from '@safe-global/safe-react-components'
 
 const descriptionText =
-  'Safe (prev. Gnosis Safe) is the most trusted platform to manage digital assets on Ethereum and multiple EVMs. Over $40B secured.'
-const titleText = 'Safe'
+  'Ethereum Classic multisig is the most trusted platform to manage digital assets on Ethereum and multiple EVMs.'
+const titleText = 'Ethereum Classic multisig'
 
 const MetaTags = ({ prefetchUrl }: { prefetchUrl: string }) => (
   <>
@@ -15,7 +15,7 @@ const MetaTags = ({ prefetchUrl }: { prefetchUrl: string }) => (
     <meta name="og:description" content={descriptionText} />
     <meta name="og:title" content={titleText} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@safe" />
+    <meta name="twitter:site" content="@ETCCooperative" />
     <meta name="twitter:title" content={titleText} />
     <meta name="twitter:description" content={descriptionText} />
     <meta name="twitter:image" content="https://app.safe.global/images/social-share.png" />

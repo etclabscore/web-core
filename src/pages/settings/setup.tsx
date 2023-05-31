@@ -17,7 +17,7 @@ const Setup: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Safe – Settings – Setup'}</title>
+        <title>{'Ethereum Classic multisig – Settings – Setup'}</title>
       </Head>
 
       <SettingsHeader />

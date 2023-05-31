@@ -8,7 +8,7 @@ const SafeAppsPermissionsPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Safe – Settings – Safe Apps permissions'}</title>
+        <title>{'Ethereum Classic multisig – Settings – Safe Apps permissions'}</title>
       </Head>
 
       <SettingsHeader />

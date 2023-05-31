@@ -50,17 +50,6 @@ const SidebarFooter = (): ReactElement => {
         </ListItem>
       )}
 
-      <Track {...OVERVIEW_EVENTS.WHATS_NEW}>
-        <ListItem disablePadding>
-          <SidebarListItemButton id={BEAMER_SELECTOR} onClick={handleBeamer}>
-            <SidebarListItemIcon color="primary">
-              <BeamerIcon />
-            </SidebarListItemIcon>
-            <SidebarListItemText bold>What&apos;s new</SidebarListItemText>
-          </SidebarListItemButton>
-        </ListItem>
-      </Track>
-
       <Track {...OVERVIEW_EVENTS.HELP_CENTER}>
         <ListItem disablePadding>
           <a target="_blank" rel="noopener noreferrer" href={WHATS_NEW_PATH} style={{ width: '100%' }}>

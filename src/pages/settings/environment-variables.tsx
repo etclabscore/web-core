@@ -7,7 +7,7 @@ const EnvironmentVariablesPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Safe – Settings – Environment variables'}</title>
+        <title>{'Ethereum Classic multisig – Settings – Environment variables'}</title>
       </Head>
 
       <SettingsHeader />

@@ -12,7 +12,7 @@ import SafeTokenWidget, { getSafeTokenAddress } from '@/components/common/SafeTo
 import NotificationCenter from '@/components/notification-center/NotificationCenter'
 import { AppRoutes } from '@/config/routes'
 import useChainId from '@/hooks/useChainId'
-import SafeLogo from '@/public/images/logo.svg'
+import ETCLogo from '@/public/images/ethereum-classic-etc-logo.svg'
 import Link from 'next/link'
 import useSafeAddress from '@/hooks/useSafeAddress'
 
@@ -48,7 +48,7 @@ const Header = ({ onMenuToggle }: HeaderProps): ReactElement => {
       <div className={classnames(css.element, css.hideMobile, css.logo)}>
         <Link href={logoHref} passHref>
           <a>
-            <SafeLogo alt="Safe logo" />
+            <ETCLogo alt="Ethereum Classic multisig" height={36} testId="heading-etc-logo" id="etc-logo" />
           </a>
         </Link>
       </div>
