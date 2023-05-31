@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react'
-import { useCallback, useEffect } from 'react'
+// import { useCallback, useEffect } from 'react'
 
 import {
   SidebarList,
@@ -49,17 +49,6 @@ const SidebarFooter = (): ReactElement => {
           <DebugToggle />
         </ListItem>
       )}
-
-      <Track {...OVERVIEW_EVENTS.WHATS_NEW}>
-        <ListItem disablePadding>
-          <SidebarListItemButton id={BEAMER_SELECTOR} onClick={handleBeamer}>
-            <SidebarListItemIcon color="primary">
-              <BeamerIcon />
-            </SidebarListItemIcon>
-            <SidebarListItemText bold>What&apos;s new</SidebarListItemText>
-          </SidebarListItemButton>
-        </ListItem>
-      </Track>
 
       <Track {...OVERVIEW_EVENTS.HELP_CENTER}>
         <ListItem disablePadding>

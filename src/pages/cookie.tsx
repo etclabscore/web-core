@@ -1,12 +1,12 @@
+import SafeCookiePolicy from '@/components/cookie-policy'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import SafeCookiePolicy from '@/components/cookie-policy'
 
 const CookiePolicy: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Safe – Cookie policy'}</title>
+        <title>{'Ethereum Classic multisig – Cookie policy'}</title>
       </Head>
 
       <main>

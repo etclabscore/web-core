@@ -77,7 +77,7 @@ const NewSafe = () => {
             color="static.main"
             mb={1}
           >
-            Welcome to {'Safe'}
+            Welcome to {'Ethereum Classic multisig'}
           </Typography>
 
           <Typography mb={5} color="static.main">

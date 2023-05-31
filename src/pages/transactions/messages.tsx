@@ -9,7 +9,7 @@ const Messages: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Safe – Messages'}</title>
+        <title>{'Ethereum Classic multisig – Messages'}</title>
       </Head>
 
       <TxHeader>

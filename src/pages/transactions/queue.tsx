@@ -14,7 +14,7 @@ const Queue: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Safe – Transaction queue'}</title>
+        <title>{'Ethereum Classic multisig – Transaction queue'}</title>
       </Head>
 
       <BatchExecuteHoverProvider>

@@ -7,7 +7,7 @@ const Open: NextPage = () => {
   return (
     <main>
       <Head>
-        <title>{'Safe – Create Safe'}</title>
+        <title>{'Ethereum Classic multisig – Create Safe'}</title>
       </Head>
 
       <CreateSafe />
