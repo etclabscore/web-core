@@ -7,7 +7,7 @@ const Offline: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ethereum Classic multisig – Offline'}</title>
+        <title>{'Catacomb ETC Wallet – Offline'}</title>
       </Head>
 
       <main>

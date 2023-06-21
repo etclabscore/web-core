@@ -11,7 +11,7 @@ const Load: NextPage = () => {
   return (
     <main>
       <Head>
-        <title>{'Ethereum Classic multisig – Add Safe'}</title>
+        <title>{'Catacomb ETC Wallet – Add Safe'}</title>
       </Head>
 
       {safeAddress ? (

@@ -37,7 +37,7 @@ const Footer = (): ReactElement | null => {
     <footer className={css.container}>
       <ul>
         <li>
-          <Typography variant="caption">&copy;2022–{new Date().getFullYear()} Ethereum Classic</Typography>
+          <Typography variant="caption">&copy;2022–{new Date().getFullYear()} ETC Cooperative</Typography>
         </li>
         <li>
           <ExternalLink noIcon href="https://ethereumclassic.org/">

@@ -20,7 +20,7 @@ const Balances: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ethereum Classic multisig – Assets'}</title>
+        <title>{'Catacomb ETC Wallet – Assets'}</title>
       </Head>
 
       <AssetsHeader>

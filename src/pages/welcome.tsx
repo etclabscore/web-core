@@ -6,7 +6,7 @@ const Welcome: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ethereum Classic multisig – Welcome'}</title>
+        <title>{'Catacomb ETC Wallet – Welcome'}</title>
       </Head>
 
       <NewSafe />

@@ -9,7 +9,7 @@ const Messages: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ethereum Classic multisig – Messages'}</title>
+        <title>{'Catacomb ETC Wallet – Messages'}</title>
       </Head>
 
       <TxHeader>

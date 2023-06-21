@@ -17,7 +17,7 @@ const Setup: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ethereum Classic multisig – Settings – Setup'}</title>
+        <title>{'Catacomb ETC Wallet – Settings – Setup'}</title>
       </Head>
 
       <SettingsHeader />

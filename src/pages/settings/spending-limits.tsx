@@ -7,7 +7,7 @@ const SpendingLimitsPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ethereum Classic multisig – Settings – Spending limit'}</title>
+        <title>{'Catacomb ETC Wallet – Settings – Spending limit'}</title>
       </Head>
 
       <SettingsHeader />

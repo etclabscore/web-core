@@ -8,7 +8,7 @@ const SafeAppsPermissionsPage: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ethereum Classic multisig – Settings – Safe Apps permissions'}</title>
+        <title>{'Catacomb ETC Wallet – Settings – Safe Apps permissions'}</title>
       </Head>
 
       <SettingsHeader />

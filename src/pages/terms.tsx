@@ -6,7 +6,7 @@ const Imprint: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ethereum Classic multisig – Terms'}</title>
+        <title>{'Catacomb ETC Wallet – Terms'}</title>
       </Head>
 
       <main>

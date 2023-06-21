@@ -10,7 +10,7 @@ const Modules: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ethereum Classic multisig – Settings – Modules'}</title>
+        <title>{'Catacomb ETC Wallet – Settings – Modules'}</title>
       </Head>
 
       <SettingsHeader />

@@ -97,7 +97,7 @@ const WebCoreApp = ({
   return (
     <StoreHydrator>
       <Head>
-        <title key="default-title">{'Ethereum Classic multisig'}</title>
+        <title key="default-title">{'Catacomb ETC Wallet'}</title>
         <MetaTags prefetchUrl={GATEWAY_URL} />
       </Head>
 

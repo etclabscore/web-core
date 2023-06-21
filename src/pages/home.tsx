@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ethereum Classic multisig – Dashboard'}</title>
+        <title>{'Catacomb ETC Wallet – Dashboard'}</title>
       </Head>
 
       <main>

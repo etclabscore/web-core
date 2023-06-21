@@ -6,7 +6,7 @@ const CookiePolicy: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ethereum Classic multisig – Cookie policy'}</title>
+        <title>{'Catacomb ETC Wallet – Cookie policy'}</title>
       </Head>
 
       <main>

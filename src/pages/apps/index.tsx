@@ -30,7 +30,7 @@ const SafeApps: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ethereum Classic multisig – Safe Apps'}</title>
+        <title>{'Catacomb ETC Wallet – Safe Apps'}</title>
       </Head>
 
       <SafeAppsSDKLink />

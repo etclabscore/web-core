@@ -35,7 +35,7 @@ const Appearance: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ethereum Classic multisig – Settings – Appearance'}</title>
+        <title>{'Catacomb ETC Wallet – Settings – Appearance'}</title>
       </Head>
 
       <SettingsHeader />

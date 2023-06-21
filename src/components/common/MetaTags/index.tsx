@@ -3,8 +3,8 @@ import { ContentSecurityPolicy, StrictTransportSecurity } from '@/config/securit
 import { darkPalette, lightPalette } from '@safe-global/safe-react-components'
 
 const descriptionText =
-  'Ethereum Classic multisig is the most trusted platform to manage digital assets on Ethereum and multiple EVMs.'
-const titleText = 'Ethereum Classic multisig'
+  'Catacomb ETC Wallet is the most trusted platform to manage digital assets on Ethereum and multiple EVMs.'
+const titleText = 'Catacomb ETC Wallet'
 
 const MetaTags = ({ prefetchUrl }: { prefetchUrl: string }) => (
   <>

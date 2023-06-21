@@ -8,7 +8,7 @@ const SingleTransaction: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ethereum Classic multisig – Transaction details'}</title>
+        <title>{'Catacomb ETC Wallet – Transaction details'}</title>
       </Head>
 
       <main>

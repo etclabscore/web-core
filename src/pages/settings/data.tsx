@@ -7,7 +7,7 @@ const Data: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ethereum Classic multisig – Settings – Data'}</title>
+        <title>{'Catacomb ETC Wallet – Settings – Data'}</title>
       </Head>
 
       <SettingsHeader />

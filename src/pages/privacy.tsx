@@ -6,7 +6,7 @@ const PrivacyPolicy: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Ethereum Classic multisig – Privacy policy'}</title>
+        <title>{'Catacomb ETC Wallet – Privacy policy'}</title>
       </Head>
 
       <main>
