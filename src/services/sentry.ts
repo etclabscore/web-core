@@ -6,7 +6,7 @@ import packageJson from '../../package.json'
 Sentry.init({
   enabled: false, // disable sentry on ETC
   dsn: SENTRY_DSN,
-  release: `web-core@${packageJson.version}`,
+  release: `safe-wallet-web@${packageJson.version}`,
   integrations: [new Integrations.BrowserTracing()],
   sampleRate: 0.1,
   // ignore MetaMask errors we don't control

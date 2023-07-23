@@ -9,8 +9,9 @@ const currentNonce = 3
 describe('Queue a transaction on 1/N', () => {
   before(() => {
     cy.connectE2EWallet()
+    cy.useProdCGW()
 
-    cy.visit(`/${SAFE}/home`, { failOnStatusCode: false })
+    cy.visit(`/home?safe=${SAFE}`)
 
     cy.contains('Accept selection').click()
   })
@@ -84,7 +85,7 @@ describe('Queue a transaction on 1/N', () => {
     // Changes nonce to next one
     cy.contains('Signing the transaction with nonce').click()
     cy.contains('button', 'Edit').click()
-    cy.get('label').contains('Safe transaction nonce').next().clear().type(currentNonce)
+    cy.get('label').contains('Safe Account transaction nonce').next().clear().type(currentNonce)
     cy.contains('Confirm').click()
 
     // Asserts the execute checkbox exists
@@ -167,7 +168,7 @@ describe('Queue a transaction on 1/N', () => {
     // Click on the notification
     cy.contains('View transaction').click()
 
-    cy.contains('Queue').click()
+    //cy.contains('Queue').click()
 
     // Single Tx page
     cy.contains('h3', 'Transaction details').should('be.visible')

@@ -15,6 +15,9 @@ import { ApprovalEditor } from '../../tx/ApprovalEditor'
 import { createMultiSendCallOnlyTx, createTx, dispatchSafeAppsTx } from '@/services/tx/tx-sender'
 import useOnboard from '@/hooks/wallets/useOnboard'
 import useSafeInfo from '@/hooks/useSafeInfo'
+import { Box, Typography } from '@mui/material'
+import { generateDataRowValue } from '@/components/transactions/TxDetails/Summary/TxDataRow'
+import useHighlightHiddenTab from '@/hooks/useHighlightHiddenTab'
 
 type ReviewSafeAppsTxProps = {
   safeAppsTx: SafeAppsTxParams
@@ -28,8 +31,9 @@ const ReviewSafeAppsTx = ({
   const chain = useCurrentChain()
   const [txList, setTxList] = useState(txs)
   const [submitError, setSubmitError] = useState<Error>()
-
   const isMultiSend = txList.length > 1
+
+  useHighlightHiddenTab()
 
   const [safeTx, safeTxError] = useAsync<SafeTransaction | undefined>(async () => {
     const tx = isMultiSend ? await createMultiSendCallOnlyTx(txList) : await createTx(txList[0])
@@ -61,12 +65,23 @@ const ReviewSafeAppsTx = ({
     <SignOrExecuteForm safeTx={safeTx} onSubmit={handleSubmit} error={safeTxError || submitError} origin={origin}>
       <>
         <ErrorBoundary fallback={<div>Error parsing data</div>}>
-          <ApprovalEditor txs={txList} updateTxs={setTxList} />
+          <ApprovalEditor safeTransaction={safeTx} updateTransaction={setTxList} />
         </ErrorBoundary>
 
         <SendFromBlock />
 
-        {safeTx && <SendToBlock address={safeTx.data.to} title={getInteractionTitle(safeTx.data.value || '', chain)} />}
+        {safeTx && (
+          <>
+            <SendToBlock address={safeTx.data.to} title={getInteractionTitle(safeTx.data.value || '', chain)} />
+
+            <Box pb={2}>
+              <Typography mt={2} color="primary.light">
+                Data (hex encoded)
+              </Typography>
+              {generateDataRowValue(safeTx.data.data, 'rawData')}
+            </Box>
+          </>
+        )}
       </>
     </SignOrExecuteForm>
   )

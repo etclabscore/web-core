@@ -4,14 +4,13 @@ import { SpendingLimitsTable } from '@/components/settings/SpendingLimits/Spendi
 import { useSelector } from 'react-redux'
 import { selectSpendingLimits, selectSpendingLimitsLoading } from '@/store/spendingLimitsSlice'
 import { NewSpendingLimit } from '@/components/settings/SpendingLimits/NewSpendingLimit'
-import { useCurrentChain } from '@/hooks/useChains'
-import { FEATURES, hasFeature } from '@/utils/chains'
+import { FEATURES } from '@/utils/chains'
+import { useHasFeature } from '@/hooks/useChains'
 
 const SpendingLimits = () => {
   const spendingLimits = useSelector(selectSpendingLimits)
   const spendingLimitsLoading = useSelector(selectSpendingLimitsLoading)
-  const currentChain = useCurrentChain()
-  const isEnabled = currentChain && hasFeature(currentChain, FEATURES.SPENDING_LIMIT)
+  const isEnabled = useHasFeature(FEATURES.SPENDING_LIMIT)
 
   return (
     <Paper sx={{ padding: 4 }}>
@@ -26,8 +25,8 @@ const SpendingLimits = () => {
           {isEnabled ? (
             <Box>
               <Typography>
-                You can set rules for specific beneficiaries to access funds from this Safe without having to collect
-                all signatures.
+                You can set rules for specific beneficiaries to access funds from this Safe Account without having to
+                collect all signatures.
               </Typography>
 
               <NewSpendingLimit />
