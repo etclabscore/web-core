@@ -1,15 +1,15 @@
-import { useRouter } from 'next/router'
-import { parse, type ParsedUrlQuery } from 'querystring'
-import { IS_PRODUCTION } from '@/config/constants'
 import chains from '@/config/chains'
+import { IS_PRODUCTION } from '@/config/constants'
 import { useAppSelector } from '@/store'
 import { selectSession } from '@/store/sessionSlice'
 import { parsePrefixedAddress } from '@/utils/addresses'
 import { prefixedAddressRe } from '@/utils/url'
-import useWallet from './wallets/useWallet'
+import { useRouter } from 'next/router'
+import { parse, type ParsedUrlQuery } from 'querystring'
 import useChains from './useChains'
+import useWallet from './wallets/useWallet'
 
-const defaultChainId = IS_PRODUCTION ? chains.eth : chains.gor
+const defaultChainId = IS_PRODUCTION ? chains.etc : chains.gor
 
 // Use the location object directly because Next.js's router.query is available only on mount
 const getLocationQuery = (): ParsedUrlQuery => {
