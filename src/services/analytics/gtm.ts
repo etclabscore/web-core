@@ -17,7 +17,7 @@ import {
   GOOGLE_TAG_MANAGER_DEVELOPMENT_AUTH,
 } from '@/config/constants'
 import type { AnalyticsEvent, EventLabel, SafeAppSDKEvent } from './types'
-import { EventType } from './types'
+import { EventType, DeviceType } from './types'
 import { SAFE_APPS_SDK_CATEGORY } from './events'
 import { getAbTest } from '../tracking/abTesting'
 import type { AbTest } from '../tracking/abTesting'
@@ -40,13 +40,20 @@ const GTM_ENV_AUTH: Record<GTMEnvironment, GTMEnvironmentArgs> = {
   },
 }
 
-let _chainId: string = ''
-
-export const gtmSetChainId = (chainId: string): void => {
-  _chainId = chainId
+const commonEventParams = {
+  chainId: '',
+  deviceType: DeviceType.DESKTOP,
 }
 
-export const gtmInit = (pagePath: string): void => {
+export const gtmSetChainId = (chainId: string): void => {
+  commonEventParams.chainId = chainId
+}
+
+export const gtmSetDeviceType = (type: DeviceType): void => {
+  commonEventParams.deviceType = type
+}
+
+export const gtmInit = (): void => {
   const GTM_ENVIRONMENT = IS_PRODUCTION ? GTM_ENV_AUTH.LIVE : GTM_ENV_AUTH.DEVELOPMENT
 
   if (!GOOGLE_TAG_MANAGER_ID || !GTM_ENVIRONMENT.auth) {
@@ -57,21 +64,16 @@ export const gtmInit = (pagePath: string): void => {
   TagManager.initialize({
     gtmId: GOOGLE_TAG_MANAGER_ID,
     ...GTM_ENVIRONMENT,
-    dataLayer: {
-      pageLocation: `${location.origin}${pagePath}`,
-      pagePath,
-      // Block JS variables and custom scripts
-      // @see https://developers.google.com/tag-platform/tag-manager/web/restrict
-      'gtm.blocklist': ['j', 'jsm', 'customScripts'],
-    },
   })
 }
 
-export const gtmClear = TagManager.disable
+export const gtmEnableCookies = TagManager.enableCookies
+export const gtmDisableCookies = TagManager.disableCookies
 
 type GtmEvent = {
   event: EventType
   chainId: string
+  deviceType: DeviceType
   abTest?: AbTest
 }
 
@@ -98,8 +100,8 @@ const gtmSend = TagManager.dataLayer
 
 export const gtmTrack = (eventData: AnalyticsEvent): void => {
   const gtmEvent: ActionGtmEvent = {
+    ...commonEventParams,
     event: eventData.event || EventType.CLICK,
-    chainId: _chainId,
     eventCategory: eventData.category,
     eventAction: eventData.action,
   }
@@ -128,8 +130,8 @@ export const gtmTrack = (eventData: AnalyticsEvent): void => {
 
 export const gtmTrackPageview = (pagePath: string): void => {
   const gtmEvent: PageviewGtmEvent = {
+    ...commonEventParams,
     event: EventType.PAGEVIEW,
-    chainId: _chainId,
     pageLocation: `${location.origin}${pagePath}`,
     pagePath,
   }
@@ -148,8 +150,8 @@ export const normalizeAppName = (appName?: string): string => {
 
 export const gtmTrackSafeApp = (eventData: AnalyticsEvent, appName?: string, sdkEventData?: SafeAppSDKEvent): void => {
   const safeAppGtmEvent: SafeAppGtmEvent = {
+    ...commonEventParams,
     event: EventType.SAFE_APP,
-    chainId: _chainId,
     eventCategory: eventData.category,
     eventAction: eventData.action,
     safeAppName: normalizeAppName(appName),

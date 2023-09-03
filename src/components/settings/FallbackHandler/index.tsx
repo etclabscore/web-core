@@ -33,7 +33,8 @@ export const FallbackHandler = (): ReactElement | null => {
     return null
   }
 
-  const isOfficial = !!safe.fallbackHandler && safe.fallbackHandler.value === fallbackHandlerDeployment?.defaultAddress
+  const isOfficial =
+    !!safe.fallbackHandler && safe.fallbackHandler.value === fallbackHandlerDeployment?.networkAddresses[safe.chainId]
 
   const tooltip = !safe.fallbackHandler ? (
     <>
@@ -42,7 +43,7 @@ export const FallbackHandler = (): ReactElement | null => {
         <>
           {' '}
           It can be set via the{' '}
-          <NextLink href={txBuilder.link} passHref>
+          <NextLink href={txBuilder.link} passHref legacyBehavior>
             <Link>Transaction Builder</Link>
           </NextLink>
           .
@@ -56,7 +57,7 @@ export const FallbackHandler = (): ReactElement | null => {
         <>
           {' '}
           It can be altered via the{' '}
-          <NextLink href={txBuilder.link} passHref>
+          <NextLink href={txBuilder.link} passHref legacyBehavior>
             <Link>Transaction Builder</Link>
           </NextLink>
           .

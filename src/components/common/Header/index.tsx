@@ -14,12 +14,14 @@ import useChainId from '@/hooks/useChainId'
 import ETCLogo from '@/public/images/ethereum-classic-etc-logo.svg'
 import Link from 'next/link'
 import useSafeAddress from '@/hooks/useSafeAddress'
+import BatchIndicator from '@/components/batch/BatchIndicator'
 
 type HeaderProps = {
   onMenuToggle?: Dispatch<SetStateAction<boolean>>
+  onBatchToggle?: Dispatch<SetStateAction<boolean>>
 }
 
-const Header = ({ onMenuToggle }: HeaderProps): ReactElement => {
+const Header = ({ onMenuToggle, onBatchToggle }: HeaderProps): ReactElement => {
   const chainId = useChainId()
   const safeAddress = useSafeAddress()
   const showSafeToken = safeAddress && !!getSafeTokenAddress(chainId)
@@ -33,6 +35,12 @@ const Header = ({ onMenuToggle }: HeaderProps): ReactElement => {
       onMenuToggle((isOpen) => !isOpen)
     } else {
       router.push(logoHref)
+    }
+  }
+
+  const handleBatchToggle = () => {
+    if (onBatchToggle) {
+      onBatchToggle((isOpen) => !isOpen)
     }
   }
 
@@ -58,7 +66,13 @@ const Header = ({ onMenuToggle }: HeaderProps): ReactElement => {
         </div>
       )}
 
-      <div className={classnames(css.element, css.hideMobile)}>
+      {safeAddress && (
+        <div className={classnames(css.element, css.hideMobile)}>
+          <BatchIndicator onClick={handleBatchToggle} />
+        </div>
+      )}
+
+      <div className={css.element}>
         <NotificationCenter />
       </div>
 

@@ -7,7 +7,8 @@ import { useRouter } from 'next/router'
 import type { ReactElement, ReactNode } from 'react'
 import packageJson from '../../../../package.json'
 import ExternalLink from '../ExternalLink'
-import css from './styles.module.css'
+import MUILink from '@mui/material/Link'
+import { IS_DEV, IS_OFFICIAL_HOST } from '@/config/constants'
 
 const footerPages = [
   AppRoutes.welcome,
@@ -21,7 +22,7 @@ const footerPages = [
 
 const FooterLink = ({ children, href }: { children: ReactNode; href: string }): ReactElement => {
   return href ? (
-    <Link href={href} passHref>
+    <Link href={href} passHref legacyBehavior>
       <MUILink>{children}</MUILink>
     </Link>
   ) : (
@@ -43,7 +44,7 @@ const Footer = (): ReactElement | null => {
   return (
     <footer className={css.container}>
       <ul>
-        {IS_OFFICIAL_HOST ? (
+        {IS_OFFICIAL_HOST || IS_DEV ? (
           <>
             <li>
               <Typography variant="caption">&copy;2022–{new Date().getFullYear()} Core Contributors GmbH</Typography>
