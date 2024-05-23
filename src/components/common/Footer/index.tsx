@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 import css from './styles.module.css'
 import { AppRoutes } from '@/config/routes'
 import packageJson from '../../../../package.json'
-import AppstoreButton from '../AppStoreButton'
 import ExternalLink from '../ExternalLink'
 import MUILink from '@mui/material/Link'
 import { IS_DEV, IS_OFFICIAL_HOST } from '@/config/constants'
@@ -73,12 +72,20 @@ const Footer = (): ReactElement | null => {
         )}
 
         <li>
-          <ExternalLink href={`${packageJson.homepage}/releases/tag/v${packageJson.version}`}>
-            v{packageJson.version}
+          <Typography variant="caption">&copy;2022–{new Date().getFullYear()} ETC Cooperative</Typography>
+        </li>
+        <li>
+          <ExternalLink noIcon href="https://ethereumclassic.org/">
+            <MUILink>Ethereum Classic Network</MUILink>
           </ExternalLink>
         </li>
         <li>
-          <AppstoreButton placement="footer" />
+          <FooterLink href={getHref(AppRoutes.settings.index)}>Preferences</FooterLink>
+        </li>
+        <li>
+          <ExternalLink noIcon href={`${packageJson.homepage}/releases/tag/v${packageJson.version}`}>
+            v{packageJson.version}
+          </ExternalLink>
         </li>
       </ul>
     </footer>

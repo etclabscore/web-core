@@ -1,20 +1,20 @@
-import type { Dispatch, SetStateAction } from 'react'
-import { type ReactElement } from 'react'
-import { useRouter } from 'next/router'
-import { IconButton, Paper } from '@mui/material'
-import MenuIcon from '@mui/icons-material/Menu'
-import classnames from 'classnames'
-import css from './styles.module.css'
+import BatchIndicator from '@/components/batch/BatchIndicator'
 import ConnectWallet from '@/components/common/ConnectWallet'
 import NetworkSelector from '@/components/common/NetworkSelector'
 import SafeTokenWidget, { getSafeTokenAddress } from '@/components/common/SafeTokenWidget'
 import NotificationCenter from '@/components/notification-center/NotificationCenter'
 import { AppRoutes } from '@/config/routes'
 import useChainId from '@/hooks/useChainId'
-import SafeLogo from '@/public/images/logo.svg'
-import Link from 'next/link'
 import useSafeAddress from '@/hooks/useSafeAddress'
-import BatchIndicator from '@/components/batch/BatchIndicator'
+import ETCLogo from '@/public/images/ethereum-classic-etc-logo.svg'
+import MenuIcon from '@mui/icons-material/Menu'
+import { IconButton, Paper } from '@mui/material'
+import classnames from 'classnames'
+import Link from 'next/link'
+import { useRouter } from 'next/router'
+import type { Dispatch, SetStateAction } from 'react'
+import { type ReactElement } from 'react'
+import css from './styles.module.css'
 
 type HeaderProps = {
   onMenuToggle?: Dispatch<SetStateAction<boolean>>
@@ -54,7 +54,7 @@ const Header = ({ onMenuToggle, onBatchToggle }: HeaderProps): ReactElement => {
 
       <div className={classnames(css.element, css.hideMobile, css.logo)}>
         <Link href={logoHref} passHref>
-          <SafeLogo alt="Safe logo" />
+          <ETCLogo alt="Catacomb ETC Wallet" height={36} id="etc-logo" />
         </Link>
       </div>
 

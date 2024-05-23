@@ -44,7 +44,7 @@ const CreationDialog = () => {
     <Dialog open={open}>
       <DialogContent sx={{ paddingX: 8, paddingTop: 9, paddingBottom: 6 }}>
         <Typography variant="h3" fontWeight="700" mb={1}>
-          Welcome to {'Safe{Wallet}'}!
+          Welcome to {'Catacomb ETC Wallet'}!
         </Typography>
         <Typography variant="body2">
           Congratulations on your first step to truly unlock ownership. Enjoy the experience and discover our app.
@@ -70,7 +70,7 @@ const CreationDialog = () => {
           <HintItem
             Icon={HelpCenterIcon}
             title="Help center"
-            description="Have any questions? Check out our collection of articles."
+            description="Have any questions? Check out Safe's collection of articles."
           />
         </Grid>
         <Box display="flex" justifyContent="center">

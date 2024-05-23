@@ -1,5 +1,5 @@
-import { Box, Paper, Typography } from '@mui/material'
 import WifiOffIcon from '@mui/icons-material/WifiOff'
+import { Box, Paper, Typography } from '@mui/material'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 
@@ -7,7 +7,7 @@ const Offline: NextPage = () => {
   return (
     <>
       <Head>
-        <title>{'Safe{Wallet} – Offline'}</title>
+        <title>{'Catacomb ETC Wallet – Offline'}</title>
       </Head>
 
       <main>
